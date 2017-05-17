@@ -1,0 +1,17 @@
+.animated-list-enter {
+  opacity: 0.01;
+}
+
+.animated-list-enter.animated-list-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.animated-list-leave {
+  opacity: 1;
+}
+
+.animated-list-leave.animated-list-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
