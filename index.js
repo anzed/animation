@@ -1,7 +1,11 @@
-var static = require('node-static');
-var file = new static.Server('build/');
-require('http').createServer(function(request, response) {
-    request.addListener('end', function() {
-        file.serve(request, response);
-    }).resume();
-}).listen(process.env.PORT || 3000);
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static('./build'));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, './build', 'index.html'));
+});
+
+app.listen(9000);
